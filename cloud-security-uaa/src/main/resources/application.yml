@@ -1,0 +1,26 @@
+server:
+  port: 9001 #运行端口号
+spring:
+  application:
+    name: uaa #服务名称
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/oauth2?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: 123456
+    driver: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minIdle: 10
+      idle-timeout: 10000
+      maximumPoolSize: 30
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 12345
+eureka:
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      defaultZone: http://localhost:9000/eureka/ #配置注册中心地址
